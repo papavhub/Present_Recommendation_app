@@ -13,7 +13,6 @@ import com.example.present_recommendation.R
 import com.example.present_recommendation.GiftActivity
 
 
-
 class RankingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +54,12 @@ class RankingActivity : AppCompatActivity() {
         }
 
         button4.setOnClickListener{ // 다른 대화내용 불러오기 버튼
-            finish()
+            var intent = Intent(applicationContext, GiftActivity::class.java)
+            startActivity(intent)
+        }
+
+        button7.setOnClickListener{// 필터링 내용 저장하기 버튼
+
         }
 
 

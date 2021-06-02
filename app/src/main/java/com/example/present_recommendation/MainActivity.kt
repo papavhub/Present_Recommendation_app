@@ -14,15 +14,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         title ="Present_Recommendation"
 
-        button.setOnClickListener{ // ranking->
+        button.setOnClickListener{ // 선물 추천
             var intent = Intent(applicationContext, GiftActivity::class.java)
             startActivity(intent)
         }
 
-        button2.setOnClickListener{// selectDelivery ->
+        button2.setOnClickListener{// 배송 조회
             var intent = Intent(applicationContext, DeliveryState::class.java)
             startActivity(intent)
         }
 
+        button5.setOnClickListener{// 로그인 버튼
+            var intent = Intent(applicationContext, LoginMainActivity::class.java)
+            startActivity(intent)
+       }
     }
 }

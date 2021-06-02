@@ -52,7 +52,15 @@
         <ListView
             android:id="@+id/listView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" >
+
+        </ListView>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="필터링 내용 저장하기" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
