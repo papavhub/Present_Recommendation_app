@@ -199,7 +199,6 @@ class GiftActivity : AppCompatActivity() {
             var topten : Array<String> = arrayOf()
             topten = strong_recommend_list_top_10.toTypedArray()
 
-
             intent.putExtra("recommend_list_top_10", myarray)
             intent.putExtra("strong_recommend_list_top_10", topten)
 

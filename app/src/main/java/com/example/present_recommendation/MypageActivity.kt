@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_afterafter.*
 import kotlinx.android.synthetic.main.activity_mypage.*
 import kotlinx.android.synthetic.main.ranking.*
 
@@ -27,6 +28,8 @@ class MypageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
+
+        var my : Array<String> = arrayOf()
 
 
         /*val txtN = myRef.child("users").child(uid).key
@@ -57,15 +60,13 @@ class MypageActivity : AppCompatActivity() {
                     List.add(array[index])
                 }
 
-                List.toTypedArray()
-
-                var my = List as Array<String>
-
-                var adapter3 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, my)
-
-                listView.adapter = adapter3
+                my = List.toTypedArray()
 
 
+                /*var adapter : ArrayAdapter<String>
+                adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, my)
+
+                LV.adapter = adapter*/
 
             }
 
@@ -73,6 +74,56 @@ class MypageActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+
+        button8.setOnClickListener{
+
+            var adapter : ArrayAdapter<String>
+            adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, my)
+
+            LV.adapter = adapter
+
+            LV.setOnItemClickListener{parent, view, position, id->
+
+                myRef.addValueEventListener(object : ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+
+                        var list1 = snapshot?.child("users").child(uid).child(my[position]).child("list1").value
+                        var list2 = snapshot?.child("users").child(uid).child(my[position]).child("list2").value
+
+
+                        textView3.setText(list1.toString() + "\n" + list2.toString())
+
+                        var array1 : MutableList<String> = list1 as MutableList<String>
+                        var array2 : MutableList<String> = list2 as MutableList<String>
+
+
+
+                        var myarray : Array<String> = arrayOf()
+                        myarray = array1.toTypedArray()
+
+                        var topten : Array<String> = arrayOf()
+                        topten = array2.toTypedArray()
+
+
+                        var intent = Intent(applicationContext, RankingActivity::class.java)
+
+                        intent.putExtra("recommend_list_top_10", myarray)
+                        intent.putExtra("strong_recommend_list_top_10", topten)
+
+                        intent.putExtra("txtFileName", my[position]) // txt 이름 가져가기기
+
+                        startActivity(intent)
+
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+            }
+
+        }
 
 
 
