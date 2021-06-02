@@ -1,5 +1,6 @@
 package com.example.present_recommendation
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 //import android.support.v7.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.regex.Pattern
 
-class LoginMainActivity : AppCompatActivity() {
+class LoginMainActivity : Activity() {
 
 
     // 파이어베이스 인증 객체 생성
@@ -23,6 +24,8 @@ class LoginMainActivity : AppCompatActivity() {
     private var editTextPassword: EditText? = null
     private var email = ""
     private var password = ""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loginmain)
@@ -30,8 +33,8 @@ class LoginMainActivity : AppCompatActivity() {
 
         // 파이어베이스 인증 객체 선언
         firebaseAuth = FirebaseAuth.getInstance()
-        editTextEmail = findViewById(R.id.et_eamil)
-        editTextPassword = findViewById(R.id.et_password)
+        editTextEmail = findViewById(R.id.edtId)
+        editTextPassword = findViewById(R.id.edtPwd)
 
     }
 
@@ -93,18 +96,10 @@ class LoginMainActivity : AppCompatActivity() {
                 ) { task ->
                     if (task.isSuccessful) {
                         // 회원가입 성공
-                        Toast.makeText(
-                                this@LoginMainActivity,
-                                R.string.success_signup,
-                                Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@LoginMainActivity,R.string.success_signup,Toast.LENGTH_SHORT).show()
                     } else {
                         // 회원가입 실패
-                        Toast.makeText(
-                                this@LoginMainActivity,
-                                R.string.failed_signup,
-                                Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@LoginMainActivity,R.string.failed_signup, Toast.LENGTH_SHORT).show()
                     }
                 }
     }
@@ -118,11 +113,7 @@ class LoginMainActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
 
                         // 로그인 성공
-                        Toast.makeText(
-                                this@LoginMainActivity,
-                                R.string.success_login,
-                                Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@LoginMainActivity,R.string.success_login,Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(application, AfterActivity::class.java)
                         startActivity(intent)
@@ -137,7 +128,6 @@ class LoginMainActivity : AppCompatActivity() {
 
     companion object {
         // 비밀번호 정규식
-        private val PASSWORD_PATTERN =
-                Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$")
+        private val PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{4,16}$")
     }
 }
