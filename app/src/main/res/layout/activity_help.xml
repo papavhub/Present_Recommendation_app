@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/main"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".BringtxtActivity">
+
+    <!--    팝업-->
+    <LinearLayout
+        android:id="@+id/helpLayerId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="80dp"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            >
+            <!--            팝업 제목-->
+            <TableRow
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/helpTitle"
+                    android:padding="15dp"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:text="kakao talk 대화 내용 저장"
+                    android:fontFamily="@font/fontstyle"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+                <!--            exit 버튼. 팝업 닫기 x-->
+
+                <ImageButton
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/exitBtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/exit"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+
+        <TextView
+            android:id="@+id/helpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontstyle"
+            android:padding="15dp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="2dp"
+            android:text="① [채팅방 우측 상단 메뉴] 선택
+                              \n② [우측 하단 톱니바퀴] 선택
+                              \n③ [대화 내용 내보내기] 선택
+                              \n④ [모든 메시지 도큐멘트로 저장하기] 혹은 [모든 메시지 내부 저장소에 저장] 선택"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/helpImg1"
+                android:layout_width="165dp"
+                android:layout_height="265dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/kakaotalk" />
+
+            <ImageView
+                android:id="@+id/helpImg2"
+                android:layout_width="165dp"
+                android:layout_height="265dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/setting" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/helpImg3"
+                android:layout_width="165dp"
+                android:layout_height="265dp"
+                app:srcCompat="@drawable/contexts_export" />
+
+            <ImageView
+                android:id="@+id/helpImg4"
+                android:layout_width="165dp"
+                android:layout_height="265dp"
+                app:srcCompat="@drawable/downloading" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".HelpActivity"></activity>
+
 
         <activity android:name=".StartActivity"></activity>
 

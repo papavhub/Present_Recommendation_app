@@ -9,7 +9,10 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Parcelable
 import android.util.Log
+import android.view.LayoutInflater
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.example.present_recommendation.R
 import com.example.present_recommendation.RankingActivity
@@ -189,7 +192,7 @@ class GiftActivity : AppCompatActivity() {
             Log.d("test",i)
         }
 
-        bringok.setOnClickListener{
+        bringok.setOnClickListener{// 확인 버튼
             var intent = Intent(applicationContext, RankingActivity::class.java)
 
             var myarray : Array<String> = arrayOf()
@@ -206,6 +209,20 @@ class GiftActivity : AppCompatActivity() {
 
 
            startActivity(intent)
+        }
+
+        button_help.setOnClickListener{// 도움말 버튼
+            val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val view = inflater.inflate(R.layout.activity_help, null)
+            var alertDialog = AlertDialog.Builder(this).create()
+
+            val exitBtn = view.findViewById<ImageButton>(R.id.exitBtn)
+            exitBtn.setOnClickListener() {
+                alertDialog.dismiss()
+            }
+
+            alertDialog.setView(view)
+            alertDialog.show()
         }
 
     }
