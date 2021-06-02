@@ -33,7 +33,8 @@ class GiftActivity : AppCompatActivity() {
         // back logic
 
         // 카카오톡 파일경로 읽기
-        val txtFilePath = Environment.getExternalStorageDirectory().absolutePath + "/KakaoTalk/Chats"
+        //val txtFilePath = Environment.getExternalStorageDirectory().absolutePath + "/KakaoTalk/Chats"
+        val txtFilePath = "/data/data/com.example.present_recommendation/files/KakaoTalk"
         val txtFileName = "KakaoTalkChats.txt"
         // 파일 읽기
         // 파일 읽기

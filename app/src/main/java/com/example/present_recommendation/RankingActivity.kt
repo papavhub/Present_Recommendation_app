@@ -12,9 +12,9 @@ import kotlinx.android.synthetic.main.ranking.*
 import com.example.present_recommendation.R
 import com.example.present_recommendation.GiftActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_mypage.*
 import kotlinx.android.synthetic.main.ranking.textView
 import kotlinx.android.synthetic.main.ranking.textView2
 
@@ -25,15 +25,13 @@ class RankingActivity : AppCompatActivity() {
     var myRef : DatabaseReference = database.getReference()
 
     data class User(
-        var uid : String? = null,
-        var email : String? = null,
-        var txtName : String? = null,
         var list1 : MutableList<String>,
         var list2 : MutableList<String>
     )
 
+
     fun writeNewUser(userId : String, uid : String, email : String, txtName : String, list1 : MutableList<String>, list2 : MutableList<String>){
-        var user = User(uid, email, txtName, list1, list2)
+        var user = User(list1, list2)
         val txt : String = txtName.replace(".", "")
         myRef.child("users").child(userId).child(txt).setValue(user)
     }
