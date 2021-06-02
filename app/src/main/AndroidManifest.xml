@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.present_recommendation">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +22,16 @@
 
         <activity android:name=".AfterActivity"></activity>
         <activity android:name=".AfterAfterActivity"></activity>
+        <activity android:name=".LoginMainActivity"></activity>
+
+
+        <activity android:name=".DeliveryActivity"></activity>
+        <activity android:name=".DeliveryState"></activity>
+        <activity android:name=".GiftActivity"></activity>
+        <activity android:name=".RankingActivity"></activity>
+
+
+
 
 
     </application>
