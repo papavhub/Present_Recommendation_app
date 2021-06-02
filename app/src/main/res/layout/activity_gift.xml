@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main">
+
+    <TextView
+        android:id="@+id/header2"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="#D4FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--    카톡 연결 구현-->
+
+    </TextView>
+
+    <!--    저장한 카톡 대화 내용 리스트 중 택 1-->
+    <Spinner
+        android:id="@+id/button_scroll_layout"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:hint="대화내용 불러오기"
+        android:fontFamily="@font/fontstyle"
+        android:textColor="#70000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header2" />
+
+    <!--    선택 대화 내용 미리보기-->
+    <TextView
+        android:id="@+id/showtext"
+        android:layout_width="310dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="16dp"
+        android:background="#66FFFFFF"
+        android:text="대화 내용 보여줌"
+        android:textColor="#90000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_scroll_layout" />
+
+    <!--    확인 및 카톡 대화 분석 시작-->
+
+    <Button
+        android:id="@+id/bringok"
+        android:layout_width="113dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:text="확 인"
+        android:textSize="20sp"
+        android:fontFamily="@font/fontstyle"
+        android:textColor="#70000000"
+        app:backgroundTint="#A596E9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showtext" />
+
+    <!--    도움말-->
+    <Button
+        android:id="@+id/button_help"
+        android:layout_width="84dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="도움말"
+        android:fontFamily="@font/fontstyle"
+        android:textColor="#70000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bringok"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--    뒤로가기-->
+    <ImageButton
+        android:id="@+id/back2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -46,4 +140,4 @@
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,32 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="20dp"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <EditText
+        android:id="@+id/edtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="20dp"
+        android:fontFamily="@font/fontstyle"
+        android:textColorHint="#70000000"
+        android:textSize="30sp"
+        android:hint="id"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="20dp"
+        android:fontFamily="@font/fontstyle"
+        android:textColorHint="#70000000"
+        android:textSize="30sp"
+        android:hint="password"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:onClick="signIn"
+        android:id="@+id/btn_signIn"
+        android:fontFamily="@font/fontstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="#766a64"
+        android:textSize="30sp"
+        android:backgroundTint="@color/white"
+        android:text="Login" />
+
+    <Button
+        android:onClick="singUp"
+        android:id="@+id/btn_signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/fontstyle"
+        android:padding="20dp"
+        android:text="회원가입"
+        android:textColor="#766a64"
+        android:textSize="20sp"
+        app:backgroundTint="#FFFFFF" />
+
+
+</LinearLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/button"
+        <TextView
+            android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ranking->" />
+            android:text="@string/email"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp" />
 
-        <Button
-            android:id="@+id/button2"
+        <EditText
+            android:id="@+id/et_eamil"
+            android:layout_below="@id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="selectdelivery->" />
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"/>
 
-        <Button
-            android:id="@+id/button5"
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_below="@id/et_eamil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="로그인" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/password"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_below="@id/tv_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_password">
+
+            <Button
+                android:id="@+id/btn_signUp"
+                android:text="@string/signup"
+                android:onClick="singUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="50dp"/>
+
+            <Button
+                android:id="@+id/btn_signIn"
+                android:text="@string/signin"
+                android:onClick="signIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="50dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>-->

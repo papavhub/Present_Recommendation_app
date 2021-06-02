@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_after_login.*
 
 
-class AfterActivity : AppCompatActivity() {
+class MypageActivity : AppCompatActivity() {
 
     var database : FirebaseDatabase = FirebaseDatabase.getInstance()
     var myRef : DatabaseReference = database.getReference()
@@ -20,9 +20,8 @@ class AfterActivity : AppCompatActivity() {
         var uid : String? = null,
         var email : String? = null,
         var txtName : String? = null,
-        var list: MutableList<String> = mutableListOf<String>("1", "2", "3", "4", "5", "6")){
-
-    }
+        var list: MutableList<String>?
+    )
 
     fun writeNewUser(userId : String, uid : String, email : String, txtName : String, list : MutableList<String>){
         var user = User(uid, email, txtName, list)
@@ -46,6 +45,8 @@ class AfterActivity : AppCompatActivity() {
             writeNewUser(uid, uid, uemail, txtName, list)
 
 
+
+
             textView.setText(uid.toString()) // 보여주기
             textView2.setText(txtName)
             var a : String = ""
@@ -62,14 +63,7 @@ class AfterActivity : AppCompatActivity() {
         }
 
 
-
-
-
     }
-
-
-
-
 
 }
 

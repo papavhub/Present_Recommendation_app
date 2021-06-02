@@ -11,9 +11,33 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.ranking.*
 import com.example.present_recommendation.R
 import com.example.present_recommendation.GiftActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_after_login.*
+import kotlinx.android.synthetic.main.ranking.textView
+import kotlinx.android.synthetic.main.ranking.textView2
 
 
 class RankingActivity : AppCompatActivity() {
+
+    var database : FirebaseDatabase = FirebaseDatabase.getInstance()
+    var myRef : DatabaseReference = database.getReference()
+
+    data class User(
+        var uid : String? = null,
+        var email : String? = null,
+        var txtName : String? = null,
+        var list1 : MutableList<String>,
+        var list2 : MutableList<String>
+    )
+
+    fun writeNewUser(userId : String, uid : String, email : String, txtName : String, list1 : MutableList<String>, list2 : MutableList<String>){
+        var user = User(uid, email, txtName, list1, list2)
+        val txt : String = txtName.replace(".", "")
+        myRef.child("users").child(userId).child(txt).setValue(user)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +46,7 @@ class RankingActivity : AppCompatActivity() {
         var intent = intent
         var myarray : Array<String> = intent.getStringArrayExtra("recommend_list_top_10") as Array<String>
         var topten : Array<String> = intent.getStringArrayExtra("strong_recommend_list_top_10") as Array<String>
+        var txtFileName : String? = intent.getStringExtra("txtFileName")
 
         var adapter1 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, myarray)
         var adapter2 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, topten)
@@ -60,9 +85,20 @@ class RankingActivity : AppCompatActivity() {
 
         button7.setOnClickListener{// 필터링 내용 저장하기 버튼
 
+            var fbAuth = FirebaseAuth.getInstance()
+            var fbFire = FirebaseFirestore.getInstance()
+
+            var uid = fbAuth?.uid.toString()
+            var uemail = fbAuth?.currentUser?.email.toString()
+            var txtName : String? = txtFileName
+            var list1 : MutableList<String> = myarray.toMutableList()
+            var list2 : MutableList<String> = topten.toMutableList()
+
+            if (txtName != null) {
+                writeNewUser(uid, uid, uemail, txtName, list1, list2)
+            }
+
         }
-
-
     }
 }
 
