@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_after_login.*
 import kotlinx.android.synthetic.main.ranking.textView
 import kotlinx.android.synthetic.main.ranking.textView2
 
@@ -97,8 +96,13 @@ class RankingActivity : AppCompatActivity() {
             if (txtName != null) {
                 writeNewUser(uid, uid, uemail, txtName, list1, list2)
             }
-
         }
+
+        button6.setOnClickListener{// 마이페이지
+            var intent = Intent(applicationContext, MypageActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 

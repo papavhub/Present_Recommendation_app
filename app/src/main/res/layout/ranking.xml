@@ -62,5 +62,11 @@
             android:layout_height="wrap_content"
             android:text="필터링 내용 저장하기" />
 
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="마이페이지" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
