@@ -8,11 +8,13 @@ import android.service.notification.NotificationListenerService
 import com.example.present_recommendation.GiftActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val intent= Intent(this, StartActivity::class.java)
+        startActivity(intent)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        title ="Present_Recommendation"
 
         button.setOnClickListener{ // 선물 추천
             var intent = Intent(applicationContext, GiftActivity::class.java)

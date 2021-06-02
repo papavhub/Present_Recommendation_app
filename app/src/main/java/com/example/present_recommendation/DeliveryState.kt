@@ -1,5 +1,6 @@
 package com.example.present_recommendation
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +16,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class DeliveryState  : AppCompatActivity() {
+class DeliveryState  : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.deliverystate)
@@ -45,18 +46,13 @@ class DeliveryState  : AppCompatActivity() {
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when(position){
                     0 -> {
-
                     }
                     1 -> {
-
                     }
                     2 -> {
-
                     }
                     else -> {
-
                     }
-
                 }
             }
         }
@@ -70,6 +66,8 @@ class DeliveryState  : AppCompatActivity() {
         val deliverService: DeliveryService = retrofit.create(DeliveryService::class.java)
 
         deliveryBtn.setOnClickListener {
+
+            //deliveryBtn.isClickable = false
 
             //대한통운
             when (spinner.selectedItemPosition) {

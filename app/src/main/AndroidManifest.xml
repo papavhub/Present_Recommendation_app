@@ -20,6 +20,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".StartActivity"></activity>
+
         <activity android:name=".AfterActivity"></activity>
         <activity android:name=".AfterAfterActivity"></activity>
         <activity android:name=".LoginMainActivity"></activity>
