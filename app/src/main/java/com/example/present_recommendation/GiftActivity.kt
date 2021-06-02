@@ -31,7 +31,9 @@ class GiftActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gift)
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 101)
 
-
+        back2.setOnClickListener{
+            finish()
+        }
 
         // back logic
 

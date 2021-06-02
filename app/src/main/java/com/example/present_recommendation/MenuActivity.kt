@@ -22,9 +22,5 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button5.setOnClickListener{// 로그인 버튼
-            var intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-       }
     }
 }

@@ -16,7 +16,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class DeliveryState  : Activity() {
+class DeliveryState  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.deliverystate)
@@ -24,6 +24,10 @@ class DeliveryState  : Activity() {
         var t1 = findViewById<TextView>(R.id.t1)
         var t2 = findViewById<TextView>(R.id.t2)
         var t3 = findViewById<TextView>(R.id.t3)
+
+        back1.setOnClickListener{
+            finish()
+        }
 
         val items = arrayOf(
                 "CJ대한통운","한진택배","우체국택배"
