@@ -1,22 +1,14 @@
 package com.example.present_recommendation
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Parcelable
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.ranking.*
-import com.example.present_recommendation.R
-import com.example.present_recommendation.GiftActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_mypage.*
-import kotlinx.android.synthetic.main.ranking.textView
-import kotlinx.android.synthetic.main.ranking.textView2
 
 
 class RankingActivity : AppCompatActivity() {
@@ -48,10 +40,10 @@ class RankingActivity : AppCompatActivity() {
         var adapter1 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, myarray)
         var adapter2 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, topten)
 
-        listView1.adapter = adapter1
-        listView2.adapter = adapter2
+        listView2.adapter = adapter1
+        listView1.adapter = adapter2
 
-        listView1.setOnItemClickListener { parent, view, position, id ->
+        listView2.setOnItemClickListener { parent, view, position, id ->
             var word : String = myarray[position].toString()
 
             var url : String = "https://search.shopping.naver.com/search/all?query=" + word + "&cat_id=&frm=NVSHATC"
@@ -61,7 +53,7 @@ class RankingActivity : AppCompatActivity() {
         }
 
 
-        listView2.setOnItemClickListener{parent, view, position, id ->
+        listView1.setOnItemClickListener{ parent, view, position, id ->
             var word : String = topten[position].toString()
 
             var url : String = "https://search.shopping.naver.com/search/all?query=" + word + "&cat_id=&frm=NVSHATC"
@@ -70,9 +62,14 @@ class RankingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        back3.setOnClickListener{ // 뒤로 버튼
+            finish()
+        }
+
 
         button3.setOnClickListener{ // 홈으로 버튼
-            finish()
+            val intent= Intent(this, MenuActivity::class.java)
+            startActivity(intent)
         }
 
         button4.setOnClickListener{ // 다른 대화내용 불러오기 버튼

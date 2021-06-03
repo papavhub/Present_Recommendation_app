@@ -1,4 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main">
+
+    <!--    마이페이지 구현-->
+
+    <!--    선물하기-->
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0"
+        >
+        <!--            팝업 제목-->
+        <TableRow
+            android:background="@color/white">
+            <TextView
+                android:padding="25dp"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:text="Presenttozuo MyPage"
+                android:fontFamily="@font/fontstyle"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/back4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back"
+                />
+            <!--            exit 버튼. 팝업 닫기 x-->
+
+        </TableRow>
+
+    </TableLayout>
+
+    <!--    main contents-->
+    <Button
+        android:id="@+id/button8"
+        android:fontFamily="@font/fontstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전 결과 불러오기"
+        android:backgroundTint="#A596E9"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"/>
+
+
+    <!--    결과 뜨게 하려고 임의로 넣음. 실제로는 밑에 리스트뷰 dialogList사용-->
+    <ListView
+        android:id="@+id/LV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontstyle"
+        android:padding="30dp"
+        android:textColor="@color/black"></TextView>
+
+
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -33,4 +104,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>-->
