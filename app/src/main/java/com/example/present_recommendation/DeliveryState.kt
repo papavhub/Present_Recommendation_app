@@ -33,7 +33,9 @@ class DeliveryState  : AppCompatActivity() {
                 "CJ대한통운","한진택배","우체국택배"
         )
 
-        val myAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,items)
+        //val myAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,items)
+        val myAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,items)
+        //var adapter1 : ArrayAdapter<String> = ArrayAdapter(this, R.layout.fontstyleblack, myarray)
 
         spinner.adapter = myAdapter
 

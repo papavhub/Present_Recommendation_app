@@ -6,6 +6,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +16,6 @@ import kotlinx.android.synthetic.main.ranking.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-
 
 class RankingActivity : AppCompatActivity() {
 
@@ -42,14 +43,25 @@ class RankingActivity : AppCompatActivity() {
         var topten : Array<String> = intent.getStringArrayExtra("strong_recommend_list_top_10") as Array<String>
         var txtFileName : String? = intent.getStringExtra("txtFileName")
 
-        var adapter1 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, myarray)
-        var adapter2 : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, topten)
+        var adapter1 : ArrayAdapter<String> = ArrayAdapter(this, R.layout.fontstyleblack, myarray)
+        var adapter2 : ArrayAdapter<String> = ArrayAdapter(this, R.layout.fontstyleblack, topten)
 
         listView2.adapter = adapter1
         listView1.adapter = adapter2
 
+        listView1.setOnTouchListener(){ view: View, motionEvent: MotionEvent ->
+            listView1.requestDisallowInterceptTouchEvent(true)
+            false
+        }
+
+        listView2.setOnTouchListener(){ view: View, motionEvent: MotionEvent ->
+            listView1.requestDisallowInterceptTouchEvent(true)
+            false
+        }
+
+
         /*listView2.setOnItemClickListener { parent, view, position, id ->
-            var word : String = myarray[position].toString()
+            var word : Sring = myarray[position].toString()
 
             var url : String = "https://search.shopping.naver.com/search/all?query=" + word + "&cat_id=&frm=NVSHATC"
             var uri = Uri.parse(url)

@@ -90,7 +90,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/fontstyle"
         android:hint="택배 조회"
-        android:textColor="#fff"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:backgroundTint="#A596E9"
         app:iconTint="#FFFFFF"

@@ -53,7 +53,7 @@ class GiftActivity : AppCompatActivity() {
         }
 
 
-        bringok.setOnClickListener{// 확인 버튼
+        bringok.setOnClickListener{// 확인 버튼 (다음 페이지로)
             var intent = Intent(applicationContext, RankingActivity::class.java)
 
             var myarray: Array<String> = arrayOf()

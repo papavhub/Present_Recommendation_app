@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<font-family xmlns:android="http://schemas.android.com/apk/res/android">
-    <font
-        android:textColor="#60000000"
-        android:fontStyle="normal"
-        android:fontWeight="400"
-        android:font="@font/jua_regular"/>
-</font-family>
+<TextView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TxtMemoListType"
+    android:textColor="#60000000"
+    android:fontStyle="normal"
+    android:fontWeight="400"
+    android:fontFamily="@font/jua_regular"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:textSize="20dp"
+    >
+</TextView>

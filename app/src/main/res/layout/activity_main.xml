@@ -14,50 +14,55 @@
         android:id="@+id/edtId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:ems="10"
-        android:padding="20dp"
         android:fontFamily="@font/fontstyle"
-        android:textColorHint="#70000000"
-        android:textSize="30sp"
         android:hint="id"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        android:textColorHint="@color/white"
+        android:textColor="#70000000"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/edtPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:ems="10"
-        android:padding="20dp"
         android:fontFamily="@font/fontstyle"
-        android:textColorHint="#70000000"
-        android:textSize="30sp"
         android:hint="password"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        android:textColorHint="@color/white"
+        android:textColor="#70000000"
+        android:textSize="30sp" />
 
     <Button
-        android:onClick="signIn"
         android:id="@+id/btn_signIn"
-        android:fontFamily="@font/fontstyle"
-        android:layout_width="match_parent"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textColor="#766a64"
-        android:textSize="30sp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
-        android:text="Login" />
+        android:fontFamily="@font/fontstyle"
+        android:onClick="signIn"
+        android:padding="20dp"
+        android:text="Login"
+        android:textColor="#766a64"
+        android:textSize="30sp" />
 
     <Button
         android:onClick="singUp"
         android:id="@+id/btn_signUp"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/fontstyle"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="회원가입"
         android:textColor="#766a64"
-        android:textSize="20sp"
-        app:backgroundTint="#FFFFFF" />
+        android:textSize="20sp" />
 
 
 </LinearLayout>
