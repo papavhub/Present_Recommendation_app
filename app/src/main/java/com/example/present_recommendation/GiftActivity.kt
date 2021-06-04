@@ -7,7 +7,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,13 +16,8 @@ import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import com.example.present_recommendation.R
-import com.example.present_recommendation.RankingActivity
 import kotlinx.android.synthetic.main.activity_gift.*
-import kotlinx.android.synthetic.main.deliverystate.*
-import okhttp3.internal.toImmutableList
 import java.io.*
-import kotlin.math.log
 
 class GiftActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
@@ -115,7 +109,7 @@ class GiftActivity : AppCompatActivity() {
                     var inputs = FileInputStream(sysDir + textlist[arg2])
                     var txt = ByteArray(inputs.available())
                     inputs.read(txt)
-                    showtext.setText(txt.toString(Charsets.UTF_8))
+                    s.setText(txt.toString(Charsets.UTF_8))
                     inputs.close()
                     //show.setText(sysDir)
 

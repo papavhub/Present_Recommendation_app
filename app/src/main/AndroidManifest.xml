@@ -6,9 +6,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:label="PRESENTTOZOU"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/present"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity android:name=".MainActivity">
@@ -25,7 +26,6 @@
         <activity android:name=".StartActivity"></activity>
 
         <activity android:name=".MypageActivity"></activity>
-        <activity android:name=".AfterAfterActivity"></activity>
         <activity android:name=".MenuActivity"></activity>
 
 

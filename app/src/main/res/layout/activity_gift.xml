@@ -33,7 +33,7 @@
 
     <!--    선택 대화 내용 미리보기-->
     <TextView
-        android:id="@+id/showtext"
+        android:id="@+id/s"
         android:layout_width="310dp"
         android:layout_height="340dp"
         android:layout_marginTop="16dp"
@@ -54,14 +54,14 @@
         android:layout_width="113dp"
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
-        android:text="확 인"
-        android:textSize="20sp"
         android:fontFamily="@font/fontstyle"
-        android:textColor="#70000000"
+        android:text="확 인"
+        android:textColor="#70FFFFFF"
+        android:textSize="20sp"
         app:backgroundTint="#A596E9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showtext" />
+        app:layout_constraintTop_toBottomOf="@+id/s" />
 
     <!--    도움말-->
     <Button
@@ -70,9 +70,10 @@
         android:layout_height="44dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="도움말"
+        android:background="#A596E9"
         android:fontFamily="@font/fontstyle"
-        android:textColor="#70000000"
+        android:text="도움말"
+        android:textColor="#70FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
