@@ -159,7 +159,7 @@ class RankingActivity : AppCompatActivity() {
                         "(캠핑용품 판매)OR(백화점)")
 
                 // 인텐트로 받은 키워드 인텐트로 받는 값은 offline_item 에 넣을 것
-                var offline_item = "티셔츠" // 여기 수정
+                var offline_item = myarray[position].toString() // 여기 수정
                 var offline_item_result = 0
                 var offline_mart_keyword = ""
                 for (execepted_gift_group_index in execepted_gift_group_list.indices) {
@@ -194,7 +194,7 @@ class RankingActivity : AppCompatActivity() {
         }
 
 
-        listView2.setOnItemClickListener { parent, view, position, id ->
+        listView1.setOnItemClickListener { parent, view, position, id ->
             val dlg: AlertDialog.Builder = AlertDialog.Builder(this,  android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth)
             dlg.setTitle("검색하기") //제목
             dlg.setMessage("오프라인 매장과 온라인 매장을 검색할 수 있어요") // 메시지
@@ -284,7 +284,7 @@ class RankingActivity : AppCompatActivity() {
                         "(캠핑용품 판매)OR(백화점)")
 
                 // 인텐트로 받은 키워드 인텐트로 받는 값은 offline_item 에 넣을 것
-                var offline_item = "티셔츠" // 여기 수정
+                var offline_item = myarray[position].toString() // 여기 수정
                 var offline_item_result = 0
                 var offline_mart_keyword = ""
                 for (execepted_gift_group_index in execepted_gift_group_list.indices) {
