@@ -10,6 +10,9 @@ import android.os.Environment
 import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -17,11 +20,9 @@ import androidx.core.app.ActivityCompat
 import com.example.present_recommendation.R
 import com.example.present_recommendation.RankingActivity
 import kotlinx.android.synthetic.main.activity_gift.*
+import kotlinx.android.synthetic.main.deliverystate.*
 import okhttp3.internal.toImmutableList
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileReader
-import java.io.IOException
+import java.io.*
 import kotlin.math.log
 
 class GiftActivity : AppCompatActivity() {
@@ -30,6 +31,53 @@ class GiftActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gift)
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE), 101)
+
+        //
+        var sysDir=Environment.getExternalStorageDirectory().absolutePath+"/KakaoTalk/Chats/"
+
+        var sysFiles=File(sysDir).listFiles()
+
+        var textlist=Array<String>(sysFiles.size,{"0"})
+        //var showlist=Array<String>(sysFiles.size,{"0"})
+
+        Log.d("test",sysFiles[0].toString())
+
+        for(i in sysFiles.indices){
+            textlist[i]=sysFiles[i].toString().replace("/storage/emulated/0/KakaoTalk/Chats/", "") // 파일 이름
+            //textlist[i]=sysFiles[i].toString().replace("/storage/emulated/0/KakaoTalk/Chats/", "") // 파일 이름
+        }
+
+        button_scroll_layout.setSelection(0, false);
+
+        var adapter: ArrayAdapter<String>
+        adapter= ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, textlist)
+        button_scroll_layout.adapter=adapter
+
+
+        button_scroll_layout.onItemSelectedListener= object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(arg0: AdapterView<*>) {
+            }
+
+            override fun onItemSelected(arg0: AdapterView<*>, arg1: View, arg2: Int, arg3: Long) {
+                arg0?.let {
+
+                    var inputs = FileInputStream(sysDir + textlist[arg2])
+                    var txt = ByteArray(inputs.available())
+                    inputs.read(txt)
+                    showtext.setText(txt.toString(Charsets.UTF_8))
+                    inputs.close()
+                    //show.setText(sysDir)
+                }
+            }
+
+        }
+
+
+
+
+
+
+        //
 
         back2.setOnClickListener{
             finish()
@@ -193,6 +241,14 @@ class GiftActivity : AppCompatActivity() {
         for (i in strong_recommend_list_top_10){ // 갖고싶다 키워드
             Log.d("test",i)
         }
+
+
+
+
+
+
+
+
 
         bringok.setOnClickListener{// 확인 버튼
             var intent = Intent(applicationContext, RankingActivity::class.java)

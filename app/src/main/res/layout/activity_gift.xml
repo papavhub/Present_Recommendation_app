@@ -38,6 +38,7 @@
         android:layout_height="340dp"
         android:layout_marginTop="16dp"
         android:background="#66FFFFFF"
+        android:fontFamily="@font/jua_regular"
         android:text="대화 내용 보여줌"
         android:textColor="#90000000"
         android:textSize="20sp"

@@ -75,10 +75,15 @@ class MypageActivity : AppCompatActivity() {
             }
         })
 
+        back4.setOnClickListener{
+            finish()
+        }
+
         button8.setOnClickListener{
 
             var adapter : ArrayAdapter<String>
-            adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, my)
+            //adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, my)
+            adapter = ArrayAdapter(this, R.layout.fontstyleblack, my)
 
             LV.adapter = adapter
 
@@ -91,7 +96,7 @@ class MypageActivity : AppCompatActivity() {
                         var list2 = snapshot?.child("users").child(uid).child(my[position]).child("list2").value
 
 
-                        textView3.setText(list1.toString() + "\n" + list2.toString())
+                        //textView3.setText(list1.toString() + "\n" + list2.toString())
 
                         var array1 : MutableList<String> = list1 as MutableList<String>
                         var array2 : MutableList<String> = list2 as MutableList<String>

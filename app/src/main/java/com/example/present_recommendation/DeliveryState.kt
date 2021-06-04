@@ -71,6 +71,10 @@ class DeliveryState  : AppCompatActivity() {
 
         deliveryBtn.setOnClickListener {
 
+            t1.setText("")
+            t2.setText("")
+            t3.setText("")
+
             //deliveryBtn.isClickable = false
 
             //대한통운
@@ -101,15 +105,15 @@ class DeliveryState  : AppCompatActivity() {
 
 
                                 var t : String = t1.getText().toString()////////////////////////////////
-                                t = t + " $realTime // "
+                                t = t + " $realTime \n\n"
                                 t1.setText(t)
 
                                 t = t2.getText().toString()
-                                t = t + "${progresses.location.name} //"
+                                t = t + "${progresses.location.name} \n\n\n"
                                 t2.setText(t)
 
                                 t = t3.getText().toString()
-                                t = t + "${progresses.status.text} //"
+                                t = t + "${progresses.status.text} \n\n\n"
                                 t3.setText(t)
 
                             }
