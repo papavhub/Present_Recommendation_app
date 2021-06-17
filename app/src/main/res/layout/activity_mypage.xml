@@ -8,8 +8,6 @@
 
     <!--    마이페이지 구현-->
 
-    <!--    선물하기-->
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +49,6 @@
         android:layout_margin="50dp"/>
 
 
-    <!--    결과 뜨게 하려고 임의로 넣음. 실제로는 밑에 리스트뷰 dialogList사용-->
     <ListView
         android:id="@+id/LV"
 
@@ -65,40 +62,3 @@
 
 
 </LinearLayout>
-
-<!--<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="불러오기" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <ListView
-            android:id="@+id/LV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>-->
