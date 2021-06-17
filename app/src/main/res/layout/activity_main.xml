@@ -32,11 +32,13 @@
         android:ems="10"
         android:fontFamily="@font/fontstyle"
         android:hint="password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:padding="20dp"
         android:textColorHint="@color/white"
         android:textColor="#70000000"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        />
+
 
     <Button
         android:id="@+id/btn_signIn"
